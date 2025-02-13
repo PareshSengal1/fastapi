@@ -44,6 +44,6 @@ def create_link(link: ResCreate):
     return crud.create_res(link)
 
 if __name__ == '__main__':
-    # uvicorn.run(app, host='127.0.0.1', port=8080)
-    uvicorn.run(app, host='0.0.0.0', port=8000)
+    uvicorn.run(app, host='127.0.0.1', port=8080)
+    # uvicorn.run(app, host='0.0.0.0', port=8000)
     # uvicorn.run(app, host='172.28.151.117', port=8080)
