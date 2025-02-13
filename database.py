@@ -1,26 +1,10 @@
-# # Database Configuration
-# import pymysql
-#
-# DB_CONFIG = {
-#     "host": "localhost",
-#     "user": "root",
-#     "password": "actowiz",
-#     "database": "fast_api",
-#     "cursorclass": pymysql.cursors.DictCursor
-# }
-#
-# # Create a database connection
-# def get_db_connection():
-#     connection = pymysql.connect(**DB_CONFIG)
-#     return connection
 import os
 import pymysql
 from urllib.parse import urlparse
 
-# Get database URL from environment variables
+# Fetch the DATABASE_URL from environment variables
 DATABASE_URL = os.getenv("DATABASE_URL")
 
-# Parse the DATABASE_URL
 if DATABASE_URL:
     db_url = urlparse(DATABASE_URL)
     DB_CONFIG = {
@@ -32,7 +16,7 @@ if DATABASE_URL:
         "cursorclass": pymysql.cursors.DictCursor
     }
 else:
-    # Fallback for local development
+    # Local development settings
     DB_CONFIG = {
         "host": "localhost",
         "user": "root",
